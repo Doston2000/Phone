@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/delete_contacts"
+        android:title="Delete contacts" />
+
+    <item
+        android:id="@+id/share_contacts"
+        android:title="Share contacts" />
+
+    <item
+        android:id="@+id/speed_dial_numbers_contact"
+        android:title="Speed dial numbers" />
+
+    <item
+        android:id="@+id/settings_contact"
+        android:title="Settings" />
+</menu>

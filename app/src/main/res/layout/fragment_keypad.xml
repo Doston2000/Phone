@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.keypad.KeypadFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keypad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <EditText
+            android:id="@+id/input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="#00000000"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:maxLength="14"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="44dp"
+            app:layout_constraintBottom_toTopOf="@id/grid" />
+
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:columnCount="3"
+            app:layout_constraintBottom_toTopOf="@id/call_btn"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/one"
+                style="@style/numbers_style"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/two"
+                style="@style/numbers_style"
+                android:text="2" />
+
+            <TextView
+                android:id="@+id/three"
+                style="@style/numbers_style"
+                android:text="3" />
+
+            <TextView
+                android:id="@+id/four"
+                style="@style/numbers_style"
+                android:text="4" />
+
+            <TextView
+                android:id="@+id/five"
+                style="@style/numbers_style"
+                android:text="5" />
+
+            <TextView
+                android:id="@+id/six"
+                style="@style/numbers_style"
+                android:text="6" />
+
+            <TextView
+                android:id="@+id/seven"
+                style="@style/numbers_style"
+                android:text="7" />
+
+            <TextView
+                android:id="@+id/eight"
+                style="@style/numbers_style"
+                android:text="8" />
+
+            <TextView
+                android:id="@+id/nine"
+                style="@style/numbers_style"
+                android:text="9" />
+
+            <TextView
+                android:id="@+id/x"
+                style="@style/numbers_style"
+                android:text="*" />
+
+            <LinearLayout
+                android:id="@+id/zero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/zero_txt"
+                    android:layout_width="110dp"
+                    android:layout_height="55dp"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="32dp" />
+
+                <TextView
+                    android:id="@+id/plus"
+                    android:layout_width="110dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:text="+"
+                    android:textColor="@color/white"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/c"
+                style="@style/numbers_style"
+                android:text="#" />
+
+        </GridLayout>
+
+        <ImageView
+            android:id="@+id/call_btn"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/call_btn_bg"
+            android:padding="10dp"
+            android:src="@drawable/ic_call"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <ImageView
+            android:id="@+id/backspace"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginLeft="10dp"
+            android:padding="18dp"
+            android:src="@drawable/ic_backspace"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@id/call_btn"
+            app:layout_constraintLeft_toRightOf="@id/call_btn"
+            app:layout_constraintRight_toRightOf="@id/grid"
+            app:layout_constraintTop_toTopOf="@id/call_btn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/open_keypda_btn"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:background="@drawable/call_btn_bg"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.95">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:padding="10dp"-->
+<!--            android:src="@drawable/ic_keypad" />-->
+
+<!--    </LinearLayout>-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

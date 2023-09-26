@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/delete_log"
+        android:title="Delete" />
+    <item
+        android:id="@+id/show_messages"
+        android:title="Show messages" />
+    <item
+        android:id="@+id/hide_blocked_calls"
+        android:title="Hide blocked calls" />
+    <item
+        android:id="@+id/total_call_time"
+        android:title="Total call time" />
+    <item
+        android:id="@+id/settings_log"
+        android:title="Settings" />
+</menu>

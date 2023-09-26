@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".ui.splashPermissions.PermissionsActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permissions"
+        android:textColor="@color/white"
+        android:textSize="34dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/ic_permission"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_full_check"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+
+    <LinearLayout
+        android:id="@+id/check_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_permission"
+        app:layout_constraintVertical_bias="0.1">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Call phone"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Read call log"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Read contact"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Listen Calls"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Send SMS"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Write call log"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/per7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="Write contacts"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:theme="@style/CustomCheckbox01" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg"
+        android:paddingHorizontal="50dp"
+        android:text="Finish"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/check_container"
+        app:layout_constraintVertical_bias="0.9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
