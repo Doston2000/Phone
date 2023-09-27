@@ -23,6 +23,8 @@ import uz.lazydevelopers1.phone.moduls.ContactModule
 import uz.lazydevelopers1.phone.moduls.LogModule
 import uz.lazydevelopers1.phone.ui.contacts.adapters.ContactAdapter
 import uz.lazydevelopers1.phone.ui.recents.adapters.LogAdapter
+import uz.lazydevelopers1.phone.ui.search.adapters.ContactAdapterForSearch
+import uz.lazydevelopers1.phone.ui.search.adapters.LogAdapterForSearch
 import uz.lazydevelopers1.phone.ui.splashPermissions.PermissionsActivity
 import uz.lazydevelopers1.phone.utils.CommunicationOptions
 import uz.lazydevelopers1.phone.utils.RequestPermission
@@ -32,8 +34,8 @@ class SearchActivity : AppCompatActivity() {
 
     private lateinit var searchBinding: ActivitySearchBinding
     private var handler = Handler(Looper.myLooper()!!)
-    private lateinit var logAdapter: LogAdapter
-    private lateinit var contactAdapter: ContactAdapter
+    private lateinit var logAdapterForSearch: LogAdapterForSearch
+    private lateinit var contactAdapterForSearch: ContactAdapterForSearch
     private var contacts = ArrayList<ContactModule>()
     private var logs = ArrayList<LogModule>()
     private var RECUEST_CODE = 1000
@@ -43,45 +45,39 @@ class SearchActivity : AppCompatActivity() {
         searchBinding = ActivitySearchBinding.inflate(layoutInflater)
         setContentView(searchBinding.root)
 
-        contactAdapter = ContactAdapter(this,contacts, object : ContactAdapter.ContactClick{
-            override fun call(contactModule: ContactModule) {
+        contactAdapterForSearch = ContactAdapterForSearch(
+            this,
+            contacts,
+            object : ContactAdapterForSearch.ContactClickForSearch {
+                override fun call(contactModule: ContactModule) {
+                    call(
+                        if (contactModule.number?.isNotEmpty() == true) contactModule.number?.first()
+                            ?: "" else ""
+                    )
+                }
 
-            }
+                override fun message(contactModule: ContactModule) {
+                    message(
+                        if (contactModule.number?.isNotEmpty() == true) contactModule.number?.first()
+                            ?: "" else ""
+                    )
+                }
+            })
+        logAdapterForSearch =
+            LogAdapterForSearch(logs, object : LogAdapterForSearch.RecentClickForSearch {
+                override fun call(logModule: LogModule) {
+                    call(logModule.number ?: "")
+                }
 
-            override fun message(contactModule: ContactModule) {
-
-            }
-
-            override fun delete(contactModule: ContactModule) {
-
-            }
-
-            override fun info(contactModule: ContactModule) {
-
-            }
-        })
-        logAdapter = LogAdapter(logs, object : LogAdapter.RecentClick {
-            override fun call(logModule: LogModule) {
-                call(logModule.number ?: "")
-            }
-
-            override fun message(logModule: LogModule) {
-
-            }
-
-            override fun delete(logModule: LogModule) {
-
-            }
-
-            override fun info(logModule: LogModule) {
-
-            }
-        }, this)
+                override fun message(logModule: LogModule) {
+                    message(logModule.number ?: "")
+                }
+            }, this)
 
         searchBinding.apply {
 
-            contactRv.adapter = contactAdapter
-            logRv.adapter = logAdapter
+            contactRv.adapter = contactAdapterForSearch
+            logRv.adapter = logAdapterForSearch
 
             contactRv.setOnTouchListener { _, _ ->
                 closedKeyboard()
@@ -138,6 +134,21 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
+    private fun message(number: String) {
+        if (number.isNotEmpty()) {
+            if (RequestPermission(
+                    this.applicationContext!!
+                ).checkSendSmsPermission()
+            ) {
+                CommunicationOptions.message(this, number)
+            } else {
+                val intent = Intent(this, PermissionsActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        }
+    }
+
     @OptIn(DelicateCoroutinesApi::class)
     private var run = Runnable {
         searchBinding.progress.visibility = View.VISIBLE
@@ -154,7 +165,7 @@ class SearchActivity : AppCompatActivity() {
             if (contacts != null) {
                 this.contacts.clear()
                 this.contacts.addAll(contacts)
-                contactAdapter.notifyDataSetChanged()
+                contactAdapterForSearch.notifyDataSetChanged()
             }
         }
 
@@ -163,7 +174,7 @@ class SearchActivity : AppCompatActivity() {
             if (logs != null) {
                 this.logs.clear()
                 this.logs.addAll(logs)
-                logAdapter.notifyDataSetChanged()
+                logAdapterForSearch.notifyDataSetChanged()
             }
         }
     }
@@ -188,8 +199,8 @@ class SearchActivity : AppCompatActivity() {
     private fun clearAdapters() {
         contacts.clear()
         logs.clear()
-        contactAdapter.notifyDataSetChanged()
-        logAdapter.notifyDataSetChanged()
+        contactAdapterForSearch.notifyDataSetChanged()
+        logAdapterForSearch.notifyDataSetChanged()
     }
 
     private fun closedKeyboard() {

@@ -88,6 +88,7 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/message"
             app:layout_constraintTop_toBottomOf="@id/number">
 
             <ImageView
@@ -107,45 +108,6 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/call"
-            app:layout_constraintRight_toLeftOf="@id/delete"
-            app:layout_constraintTop_toBottomOf="@id/number">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_message" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/delete"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginVertical="20dp"
-            android:background="@drawable/delete_btn_bg"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/message"
-            app:layout_constraintRight_toLeftOf="@id/info"
-            app:layout_constraintTop_toBottomOf="@id/number">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_delete" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/info"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginVertical="20dp"
-            android:background="@drawable/info_btn_bg"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/number">
 
@@ -153,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
-                android:src="@drawable/ic_info" />
+                android:src="@drawable/ic_message" />
 
         </LinearLayout>
 

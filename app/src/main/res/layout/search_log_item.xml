@@ -23,31 +23,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/img_container"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:id="@+id/log_status_ic"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginLeft="22dp"
-            app:cardBackgroundColor="@color/default_bottom_navigation_text_color"
-            app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/tv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/contact_ic"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/user_info"
@@ -57,13 +40,23 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/img_container"
+            app:layout_constraintLeft_toRightOf="@id/log_status_ic"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/log_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/default_bottom_navigation_text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/contact_bottom_container"
+        android:id="@+id/log_bottom_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingHorizontal="62dp"
@@ -74,10 +67,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Number"
-            android:textColor="@color/white"
+            android:textColor="@color/green"
             android:textSize="14dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/number" />
 
         <LinearLayout
             android:id="@+id/call"
@@ -88,7 +90,8 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number">
+            app:layout_constraintRight_toLeftOf="@id/message"
+            app:layout_constraintTop_toBottomOf="@id/type">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -107,53 +110,14 @@
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/call"
-            app:layout_constraintRight_toLeftOf="@id/delete"
-            app:layout_constraintTop_toBottomOf="@id/number">
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/type">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="8dp"
                 android:src="@drawable/ic_message" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/delete"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginVertical="20dp"
-            android:background="@drawable/delete_btn_bg"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/message"
-            app:layout_constraintRight_toLeftOf="@id/info"
-            app:layout_constraintTop_toBottomOf="@id/number">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_delete" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/info"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginVertical="20dp"
-            android:background="@drawable/info_btn_bg"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="8dp"
-                android:src="@drawable/ic_info" />
 
         </LinearLayout>
 
