@@ -47,9 +47,12 @@ class GetContactViewModel(
                     contacts.add(contact)
                 }
 
-                HoldContacts.contactsList.clear()
+                for (i in 0 until contacts.size) {
+                    HoldContacts.contactsList.removeIf { it.contactUri == contacts[i].contactUri }
+                }
+
                 HoldContacts.contactsList.addAll(contacts)
-                val holdList = HoldContacts.contactsList.distinctBy { "${it.name}${it.number}" }
+                val holdList = HoldContacts.contactsList.distinctBy { "${it.contactUri}" }
                 HoldContacts.contactsList.clear()
                 HoldContacts.contactsList.addAll(holdList)
 
@@ -105,5 +108,4 @@ class GetContactViewModel(
             cursor.close()
         }
     }
-
 }

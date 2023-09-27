@@ -1,20 +1,20 @@
 package uz.lazydevelopers1.phone.ui.contactInfo
 
+import android.content.ContentUris
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.provider.ContactsContract
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.core.view.setPadding
 import uz.lazydevelopers1.phone.R
 import uz.lazydevelopers1.phone.databinding.ActivityContactInfoBinding
-import uz.lazydevelopers1.phone.databinding.ActivityLogInfoBinding
-import uz.lazydevelopers1.phone.ui.logInfo.LogInfoViewModel
-import uz.lazydevelopers1.phone.ui.logInfo.adapters.LogInfoGroupAdapter
 import uz.lazydevelopers1.phone.ui.splashPermissions.PermissionsActivity
 import uz.lazydevelopers1.phone.utils.CommunicationOptions
+import uz.lazydevelopers1.phone.utils.Edit
 import uz.lazydevelopers1.phone.utils.RequestPermission
 import uz.lazydevelopers1.phone.utils.Share
+
 
 class ContactInfoActivity : AppCompatActivity() {
 
@@ -53,10 +53,21 @@ class ContactInfoActivity : AppCompatActivity() {
             }
 
             contactInfoBinding.share.setOnClickListener {
-                Share.shareContact(this@ContactInfoActivity, ContactInfoViewModel.ContactInfo.contact)
+                Share.shareContact(
+                    this@ContactInfoActivity,
+                    ContactInfoViewModel.ContactInfo.contact
+                )
+            }
+
+            contactInfoBinding.edit.setOnClickListener {
+                editContact()
             }
         }
 
+    }
+
+    private fun editContact() {
+        Edit.ediContact(this)
     }
 
     private fun call(phoneNumber: String) {

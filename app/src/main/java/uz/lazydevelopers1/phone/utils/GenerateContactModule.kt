@@ -5,8 +5,6 @@ import android.provider.ContactsContract.CommonDataKinds.Phone
 import android.content.ContentResolver
 import android.content.ContentUris
 import android.database.Cursor
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.provider.ContactsContract
 import uz.lazydevelopers1.phone.moduls.ContactModule
@@ -30,9 +28,36 @@ object GenerateContactModule {
         return ContactModule(
             id,
             name,
+            contactUri(contentResolver, id),
             getContactNumber(id, contentResolver),
             getContactsDetails(id, contentResolver)
         )
+    }
+
+    @SuppressLint("Range")
+    private fun contactUri(contentResolver: ContentResolver?, id: Long): Uri? {
+
+        val selection =
+            "${Phone._ID} LIKE ?"
+
+        val selectionArgs = arrayOf("%$id%")
+
+        val uri = Phone.CONTENT_URI
+        val cursor = contentResolver?.query(
+            uri,
+            null,
+            selection,
+            selectionArgs,
+            Phone.DISPLAY_NAME + " ASC"
+        )
+
+        if (cursor?.moveToFirst()!!) {
+            val idContact: Long =
+                cursor.getLong(cursor.getColumnIndex(Phone.CONTACT_ID))
+            return ContentUris.withAppendedId(ContactsContract.Contacts.CONTENT_URI, idContact)
+        }
+        return null
+
     }
 
     @SuppressLint("Range")
