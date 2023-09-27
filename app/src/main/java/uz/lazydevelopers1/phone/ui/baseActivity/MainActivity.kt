@@ -32,6 +32,7 @@ import uz.lazydevelopers1.phone.utils.BottomNavigationController
 import uz.lazydevelopers1.phone.utils.DeleteLogsAndContacts
 import uz.lazydevelopers1.phone.utils.RequestPermission
 import uz.lazydevelopers1.phone.utils.SelectFragment
+import uz.lazydevelopers1.phone.utils.Share
 
 class MainActivity : AppCompatActivity(), FragmentListener {
     private lateinit var mainBinding: ActivityMainBinding
@@ -208,12 +209,13 @@ class MainActivity : AppCompatActivity(), FragmentListener {
 
                 //For Contact
                 R.id.delete_contacts -> {
-                    DeleteLogsAndContacts.selectedContactsDelete(this,this)
+                    DeleteLogsAndContacts.selectedContactsDelete(this, this)
 //                    Toast.makeText(this, "Delete contact", Toast.LENGTH_SHORT).show()
                 }
 
                 R.id.share_contacts -> {
-                    Toast.makeText(this, "Share contact", Toast.LENGTH_SHORT).show()
+                    Share.selectedContactsShare(this)
+//                    Toast.makeText(this, "Share contact", Toast.LENGTH_SHORT).show()
                 }
 
                 R.id.speed_dial_numbers_contact -> {

@@ -11,13 +11,13 @@ import uz.lazydevelopers1.phone.databinding.LogItemBinding
 import uz.lazydevelopers1.phone.moduls.LogModule
 
 class LogAdapter(
-    var userLogsList: ArrayList<LogModule>,
+    private var userLogsList: ArrayList<LogModule>,
     var recentClick: RecentClick,
     var context: Context
 ) :
     RecyclerView.Adapter<LogAdapter.LogVH>() {
 
-    inner class LogVH(var recentItemBinding: LogItemBinding) :
+    inner class LogVH(private var recentItemBinding: LogItemBinding) :
         RecyclerView.ViewHolder(recentItemBinding.root) {
         fun onBind(logModule: LogModule, position: Int) {
 
@@ -66,7 +66,7 @@ class LogAdapter(
                 recentItemBinding.line.visibility = View.VISIBLE
             }
 
-            var info = if (logModule.name?.isNotEmpty() == true) logModule.name else logModule.number
+            val info = if (logModule.name?.isNotEmpty() == true) logModule.name else logModule.number
 
             recentItemBinding.userInfo.text = (info) + if (logModule.similarLogsIds.size > 1) " (${logModule.similarLogsIds.size})" else ""
 

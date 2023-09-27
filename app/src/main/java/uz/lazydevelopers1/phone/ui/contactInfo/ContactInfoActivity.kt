@@ -14,6 +14,7 @@ import uz.lazydevelopers1.phone.ui.logInfo.adapters.LogInfoGroupAdapter
 import uz.lazydevelopers1.phone.ui.splashPermissions.PermissionsActivity
 import uz.lazydevelopers1.phone.utils.CommunicationOptions
 import uz.lazydevelopers1.phone.utils.RequestPermission
+import uz.lazydevelopers1.phone.utils.Share
 
 class ContactInfoActivity : AppCompatActivity() {
 
@@ -49,6 +50,10 @@ class ContactInfoActivity : AppCompatActivity() {
 
             message.setOnClickListener {
                 message(number ?: "")
+            }
+
+            contactInfoBinding.share.setOnClickListener {
+                Share.shareContact(this@ContactInfoActivity, ContactInfoViewModel.ContactInfo.contact)
             }
         }
 
