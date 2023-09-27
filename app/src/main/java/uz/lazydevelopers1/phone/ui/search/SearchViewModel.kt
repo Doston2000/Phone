@@ -1,5 +1,6 @@
 package uz.lazydevelopers1.phone.ui.search
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
 import android.database.Cursor
 import android.provider.CallLog
@@ -39,6 +40,7 @@ class SearchViewModel(private var contentResolver: ContentResolver) : ViewModel(
             Phone.NUMBER
         )
 
+    @SuppressLint("Range")
     fun search(searchStr: String) {
 
         val selectionForLog =
@@ -69,7 +71,17 @@ class SearchViewModel(private var contentResolver: ContentResolver) : ViewModel(
             if (cursorForLog.count > 0) {
                 val logsList = ArrayList<LogModule>()
                 while (cursorForLog.moveToNext()) {
-                    logsList.add(GenerateLogModule.createLogModule(cursorForLog,contentResolver))
+                    val number =
+                        cursorForLog.getString(cursorForLog.getColumnIndex(CallLog.Calls.NUMBER))
+                    if (logsList.any { it.number == number }) {
+                    } else {
+                        logsList.add(
+                            GenerateLogModule.createLogModule(
+                                cursorForLog,
+                                contentResolver
+                            )
+                        )
+                    }
                 }
                 HoldSearchItems.logsLiveData.postValue(logsList)
             } else {
