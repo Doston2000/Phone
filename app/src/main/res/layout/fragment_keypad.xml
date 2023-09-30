@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
     tools:context=".ui.keypad.KeypadFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +25,6 @@
             android:maxLines="1"
             android:paddingHorizontal="20dp"
             android:singleLine="true"
-            android:textColor="@color/white"
             android:textSize="44dp"
             app:layout_constraintBottom_toTopOf="@id/grid" />
 
@@ -42,53 +40,93 @@
 
             <TextView
                 android:id="@+id/one"
-                style="@style/numbers_style"
-                android:text="1" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/two"
-                style="@style/numbers_style"
-                android:text="2" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/three"
-                style="@style/numbers_style"
-                android:text="3" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/four"
-                style="@style/numbers_style"
-                android:text="4" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/five"
-                style="@style/numbers_style"
-                android:text="5" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="5"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/six"
-                style="@style/numbers_style"
-                android:text="6" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="6"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/seven"
-                style="@style/numbers_style"
-                android:text="7" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="7"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/eight"
-                style="@style/numbers_style"
-                android:text="8" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="8"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/nine"
-                style="@style/numbers_style"
-                android:text="9" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="9"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <TextView
                 android:id="@+id/x"
-                style="@style/numbers_style"
-                android:text="*" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="*"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
             <LinearLayout
                 android:id="@+id/zero"
@@ -120,8 +158,12 @@
 
             <TextView
                 android:id="@+id/c"
-                style="@style/numbers_style"
-                android:text="#" />
+                android:layout_width="110dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:text="#"
+                android:textColor="@color/white"
+                android:textSize="36dp" />
 
         </GridLayout>
 
@@ -152,24 +194,24 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    <LinearLayout-->
-<!--        android:id="@+id/open_keypda_btn"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="@drawable/call_btn_bg"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintLeft_toLeftOf="parent"-->
-<!--        app:layout_constraintRight_toRightOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.95">-->
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/open_keypda_btn"-->
+    <!--        android:layout_width="50dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:background="@drawable/call_btn_bg"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--        app:layout_constraintRight_toRightOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.95">-->
 
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:padding="10dp"-->
-<!--            android:src="@drawable/ic_keypad" />-->
+    <!--        <ImageView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:src="@drawable/ic_keypad" />-->
 
-<!--    </LinearLayout>-->
+    <!--    </LinearLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

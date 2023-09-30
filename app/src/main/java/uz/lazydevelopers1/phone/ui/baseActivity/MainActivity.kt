@@ -1,6 +1,5 @@
 package uz.lazydevelopers1.phone.ui.baseActivity
 
-import android.content.ContentResolver
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
@@ -27,6 +26,7 @@ import uz.lazydevelopers1.phone.databinding.ActivityMainBinding
 import uz.lazydevelopers1.phone.receivers.CallReceiver
 import uz.lazydevelopers1.phone.ui.contacts.GetContactViewModel
 import uz.lazydevelopers1.phone.ui.search.SearchActivity
+import uz.lazydevelopers1.phone.ui.settings.SettingsActivity
 import uz.lazydevelopers1.phone.ui.splashPermissions.PermissionsActivity
 import uz.lazydevelopers1.phone.utils.BottomNavigationController
 import uz.lazydevelopers1.phone.utils.DeleteLogsAndContacts
@@ -182,7 +182,8 @@ class MainActivity : AppCompatActivity(), FragmentListener {
                 }
 
                 R.id.settings_keypad -> {
-                    Toast.makeText(this, "Settings keypad", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "Settings keypad", Toast.LENGTH_SHORT).show()
+                    openSettings()
                 }
 
                 //For Log
@@ -204,7 +205,8 @@ class MainActivity : AppCompatActivity(), FragmentListener {
                 }
 
                 R.id.settings_log -> {
-                    Toast.makeText(this, "Settings log", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "Settings log", Toast.LENGTH_SHORT).show()
+                    openSettings()
                 }
 
                 //For Contact
@@ -223,7 +225,8 @@ class MainActivity : AppCompatActivity(), FragmentListener {
                 }
 
                 R.id.settings_contact -> {
-                    Toast.makeText(this, "Settings contact", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(this, "Settings contact", Toast.LENGTH_SHORT).show()
+                    openSettings()
                 }
             }
             true
@@ -285,6 +288,11 @@ class MainActivity : AppCompatActivity(), FragmentListener {
             mainBinding.viewPager.currentItem = 0
             bottomNavigationController.selectBtn(selectFragment)
         }
+    }
+
+    private fun openSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<item>
+    <shape>
+        <solid android:color="@color/log_group_bg_color"/>
+        <corners android:radius="10dp"/>
+        <stroke android:color="@color/default_bottom_navigation_text_color" android:width="0.5dp"/>
+    </shape>
+</item>
+</selector>

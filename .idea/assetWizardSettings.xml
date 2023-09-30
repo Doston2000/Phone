@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/D:/ANDROID/SDK/icons/material/materialicons/share/baseline_share_24.xml" />
+                                      <entry key="url" value="file:/D:/ANDROID/SDK/icons/material/materialicons/wb_sunny/baseline_wb_sunny_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,7 +33,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_share" />
+                            <entry key="outputName" value="ic_sunny" />
                             <entry key="sourceFile" value="C:\Users\DOSTON\Desktop\Phone" />
                           </map>
                         </option>
