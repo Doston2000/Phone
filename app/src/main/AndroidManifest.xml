@@ -18,9 +18,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Phone"
         tools:targetApi="31">
@@ -30,7 +30,7 @@
         <!-- for share contacts -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.myapp.fileprovider"
+            android:authorities="uz.lazydevelopers1.phone.utils.Share"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

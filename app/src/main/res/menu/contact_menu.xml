@@ -8,9 +8,9 @@
         android:id="@+id/share_contacts"
         android:title="Share contacts" />
 
-    <item
-        android:id="@+id/speed_dial_numbers_contact"
-        android:title="Speed dial numbers" />
+<!--    <item-->
+<!--        android:id="@+id/speed_dial_numbers_contact"-->
+<!--        android:title="Speed dial numbers" />-->
 
     <item
         android:id="@+id/settings_contact"

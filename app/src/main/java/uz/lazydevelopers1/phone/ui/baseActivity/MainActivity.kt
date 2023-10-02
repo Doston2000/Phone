@@ -177,9 +177,9 @@ class MainActivity : AppCompatActivity(), FragmentListener {
             when (menuItem.itemId) {
 
                 //For Keypad
-                R.id.speed_dial_numbers_keypad -> {
-                    Toast.makeText(this, "Speed dial numbers keypad", Toast.LENGTH_SHORT).show()
-                }
+//                R.id.speed_dial_numbers_keypad -> {
+//                    Toast.makeText(this, "Speed dial numbers keypad", Toast.LENGTH_SHORT).show()
+//                }
 
                 R.id.settings_keypad -> {
 //                    Toast.makeText(this, "Settings keypad", Toast.LENGTH_SHORT).show()
@@ -192,17 +192,17 @@ class MainActivity : AppCompatActivity(), FragmentListener {
                     DeleteLogsAndContacts.selectedLogsDelete(this, this)
                 }
 
-                R.id.show_messages -> {
-                    Toast.makeText(this, "Show message", Toast.LENGTH_SHORT).show()
-                }
-
-                R.id.hide_blocked_calls -> {
-                    Toast.makeText(this, "Hide blocked calls", Toast.LENGTH_SHORT).show()
-                }
-
-                R.id.total_call_time -> {
-                    Toast.makeText(this, "Total call time", Toast.LENGTH_SHORT).show()
-                }
+//                R.id.show_messages -> {
+//                    Toast.makeText(this, "Show message", Toast.LENGTH_SHORT).show()
+//                }
+//
+//                R.id.hide_blocked_calls -> {
+//                    Toast.makeText(this, "Hide blocked calls", Toast.LENGTH_SHORT).show()
+//                }
+//
+//                R.id.total_call_time -> {
+//                    Toast.makeText(this, "Total call time", Toast.LENGTH_SHORT).show()
+//                }
 
                 R.id.settings_log -> {
 //                    Toast.makeText(this, "Settings log", Toast.LENGTH_SHORT).show()
@@ -220,9 +220,9 @@ class MainActivity : AppCompatActivity(), FragmentListener {
 //                    Toast.makeText(this, "Share contact", Toast.LENGTH_SHORT).show()
                 }
 
-                R.id.speed_dial_numbers_contact -> {
-                    Toast.makeText(this, "Speed dial numbers contact", Toast.LENGTH_SHORT).show()
-                }
+//                R.id.speed_dial_numbers_contact -> {
+//                    Toast.makeText(this, "Speed dial numbers contact", Toast.LENGTH_SHORT).show()
+//                }
 
                 R.id.settings_contact -> {
 //                    Toast.makeText(this, "Settings contact", Toast.LENGTH_SHORT).show()

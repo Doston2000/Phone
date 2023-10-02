@@ -43,7 +43,7 @@ object Share {
             intent.type = "text/csv"
             val fileUri = FileProvider.getUriForFile(
                 activity?.applicationContext!!,
-                "com.example.myapp.fileprovider",
+                "uz.lazydevelopers1.phone.utils.Share",
                 file
             )
             intent.putExtra(Intent.EXTRA_STREAM, fileUri)
