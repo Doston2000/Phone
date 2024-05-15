@@ -1,5 +1,5 @@
 Used Technologies
-MVVM MVVM Architecture (Model - View - ViewModel)
+\nMVVM MVVM Architecture (Model - View - ViewModel)
 Clean-architecture
 Jetpack Compose
 Dagger - Hilt
