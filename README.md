@@ -1,10 +1,10 @@
-Used Technologies
-\nMVVM MVVM Architecture (Model - View - ViewModel)
-Clean-architecture
-Jetpack Compose
-Dagger - Hilt
-Room
-Coroutines
+Used Technologies.
+  MVVM MVVM Architecture (Model - View - ViewModel).
+  Clean-architecture.
+  Jetpack Compose.
+  Dagger - Hilt.
+  Room.
+  Coroutines.
 
 ![1](https://github.com/Doston2000/Phone/assets/87979271/c1ab751b-1820-4dfa-a3cc-9dc27bf3a005)
 ![2](https://github.com/Doston2000/Phone/assets/87979271/d907c3f8-2628-46fd-9e29-08263c651ba1)
