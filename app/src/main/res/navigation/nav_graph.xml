@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/keypadFragment"
-        android:name="uz.lazydevelopers1.phone.ui.keypad.KeypadFragment"
+        android:name="uz.lazydevelopers1.callPhone.ui.keypad.KeypadFragment"
         android:label="fragment_keypad"
         tools:layout="@layout/fragment_keypad" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/recentsFragment"
-        android:name="uz.lazydevelopers1.phone.ui.recents.RecentFragment"
+        android:name="uz.lazydevelopers1.callPhone.ui.recents.RecentFragment"
         android:label="fragment_recents"
         tools:layout="@layout/fragment_recent" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/contactsFragment"
-        android:name="uz.lazydevelopers1.phone.ui.contacts.ContactsFragment"
+        android:name="uz.lazydevelopers1.callPhone.ui.contacts.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" >
         <action

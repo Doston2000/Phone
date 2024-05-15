@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.splashPermissions.PermissionsActivity">
+    tools:context="uz.lazydevelopers1.callPhone.ui.splashPermissions.PermissionsActivity">
 
     <TextView
         android:id="@+id/title"
@@ -76,16 +76,6 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:text="Listen Calls"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            android:theme="@style/CustomCheckbox01" />
-
-        <androidx.appcompat.widget.AppCompatCheckBox
-            android:id="@+id/per5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:text="Send SMS"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:theme="@style/CustomCheckbox01" />

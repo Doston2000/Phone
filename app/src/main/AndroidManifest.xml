@@ -12,7 +12,7 @@
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
+
 
     <application
         android:allowBackup="true"
@@ -24,25 +24,39 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Phone"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.callScreen.CallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:showOnLockScreen="true"
+            android:launchMode="singleInstance"
+            tools:ignore="LockedOrientationActivity" />
+
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false" />
+
         <!-- for share contacts -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="uz.lazydevelopers1.phone.utils.Share"
+            android:authorities="uz.lazydevelopers1.callPhone.utils.Share"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider> <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+        </provider>
+        <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
         <activity
             android:name=".ui.contactInfo.ContactInfoActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.logInfo.LogInfoActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.splashPermissions.PermissionsActivity"
             android:exported="true">
@@ -52,16 +66,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.search.SearchActivity"
             android:exported="false" />
+
         <activity
             android:name=".ui.baseActivity.MainActivity"
-            android:exported="false">
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.DIAL" />
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="tel" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <service
+            android:name=".ui.callScreen.services.CallService"
+            android:exported="true"
+            android:permission="android.permission.BIND_INCALL_SERVICE">
+            <meta-data
+                android:name="android.telecom.IN_CALL_SERVICE_UI"
+                android:value="true" />
+            <meta-data
+                android:name="android.telecom.IN_CALL_SERVICE_RINGING"
+                android:value="true" />
+            <intent-filter>
+                <action android:name="android.telecom.InCallService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".ui.callScreen.receivers.ActionReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="YES" />
+                <action android:name="NO" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

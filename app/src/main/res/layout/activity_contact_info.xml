@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".ui.contactInfo.ContactInfoActivity">
+    tools:context="uz.lazydevelopers1.callPhone.ui.contactInfo.ContactInfoActivity">
 
     <ImageView
         android:id="@+id/back"

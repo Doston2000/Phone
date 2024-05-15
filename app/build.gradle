@@ -4,15 +4,15 @@ plugins {
 }
 
 android {
-    namespace 'uz.lazydevelopers1.phone'
+    namespace 'uz.lazydevelopers1.callPhone'
     compileSdk 33
 
     defaultConfig {
-        applicationId "uz.lazydevelopers1.phone"
-        minSdk 24
+        applicationId "uz.lazydevelopers1.callPhone"
+        minSdk 29
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
