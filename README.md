@@ -1,3 +1,5 @@
+video https://www.youtube.com/watch?v=zLuTxoxaGPA
+
 ![1](https://github.com/Doston2000/Phone/assets/87979271/919e396d-7044-4995-ba8c-7635c41dcde4)
 ![2](https://github.com/Doston2000/Phone/assets/87979271/d646bcce-727e-4851-bb66-aad17046e03e)
 ![3](https://github.com/Doston2000/Phone/assets/87979271/f7efb533-0d75-4824-831b-36cb1c5fe63c)
