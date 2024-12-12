@@ -26,14 +26,6 @@
         tools:targetApi="31">
 
         <activity
-            android:name=".ui.callScreen.CallActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:showOnLockScreen="true"
-            android:launchMode="singleInstance"
-            tools:ignore="LockedOrientationActivity" />
-
-        <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="false" />
 
@@ -73,44 +65,11 @@
 
         <activity
             android:name=".ui.baseActivity.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.DIAL" />
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.DIAL" />
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="tel" />
-            </intent-filter>
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-        <service
-            android:name=".ui.callScreen.services.CallService"
-            android:exported="true"
-            android:permission="android.permission.BIND_INCALL_SERVICE">
-            <meta-data
-                android:name="android.telecom.IN_CALL_SERVICE_UI"
-                android:value="true" />
-            <meta-data
-                android:name="android.telecom.IN_CALL_SERVICE_RINGING"
-                android:value="true" />
-            <intent-filter>
-                <action android:name="android.telecom.InCallService" />
-            </intent-filter>
-        </service>
-
-        <receiver android:name=".ui.callScreen.receivers.ActionReceiver"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="YES" />
-                <action android:name="NO" />
-            </intent-filter>
-        </receiver>
 
     </application>
 

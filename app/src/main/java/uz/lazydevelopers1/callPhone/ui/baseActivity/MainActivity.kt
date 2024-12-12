@@ -48,55 +48,11 @@ class MainActivity : AppCompatActivity(), FragmentListener {
     private var selectFragment = SelectFragment.KEYPAD
     private var phoneNumber = ""
     private var activityResumeListener: ActivityListener? = null
-//    private val callReceiver = CallReceiver(this)
-
-    private val DEFAULT_DIALER_REQUEST_ID = 83
-    private lateinit var intentLauncher: ActivityResultLauncher<Intent>
-
-    private val roleManager: RoleManager by lazy {
-        getSystemService(Context.ROLE_SERVICE) as RoleManager
-    }
-
-    fun requestDefaultDialerRole() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-//            val roleManager = getSystemService(ROLE_SERVICE) as RoleManager
-//            val intent = roleManager.createRequestRoleIntent(RoleManager.ROLE_DIALER)
-//            startActivityForResult(intent, 83)
-            val role = RoleManager.ROLE_DIALER
-            if (roleManager.isRoleAvailable(role)) {
-                if (!roleManager.isRoleHeld(role)) {
-                    intentLauncher.launch(
-                        roleManager.createRequestRoleIntent(role)
-                    )
-                } else {
-                    Toast.makeText(this, "ROLE_BROWSER is already held by this app.", Toast.LENGTH_SHORT).show()
-                }
-            } else {
-                Toast.makeText(this, "ROLE_BROWSER doesn't exist.", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
-
-        intentLauncher =
-            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                if (it.resultCode == Activity.RESULT_OK) {
-                    Toast.makeText(this, "Success requesting ROLE_BROWSER!", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(this, "Failed requesting ROLE_BROWSER", Toast.LENGTH_SHORT).show()
-                }
-            }
-
-        requestDefaultDialerRole()
-
-
-        val intentFilter = IntentFilter()
-        intentFilter.addAction(TelephonyManager.ACTION_PHONE_STATE_CHANGED)
-//        registerReceiver(callReceiver, intentFilter)
 
         mainPagerAdapter = MainPagerAdapter(supportFragmentManager, lifecycle)
 
