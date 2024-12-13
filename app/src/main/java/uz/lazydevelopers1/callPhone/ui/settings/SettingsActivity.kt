@@ -6,7 +6,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import uz.lazydevelopers1.callPhone.BuildConfig
 import uz.lazydevelopers1.callPhone.databinding.ActivitySettingsBinding
 
 class SettingsActivity : AppCompatActivity() {
@@ -30,7 +29,7 @@ class SettingsActivity : AppCompatActivity() {
                 var shareMessage = "\nLet me recommend you this application\n\n"
                 shareMessage =
                     """
-                    ${shareMessage + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID}
+                    ${shareMessage + "https://play.google.com/store/apps/details?id=" + packageName}
                     """.trimIndent()
                 shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
                 startActivity(Intent.createChooser(shareIntent, "choose one"))

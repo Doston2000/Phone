@@ -1,16 +1,21 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id("kotlin-kapt")
+}
+
+apply {
+    from("../common.gradle")
 }
 
 android {
     namespace 'uz.lazydevelopers1.callPhone'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "uz.lazydevelopers1.callPhone"
         minSdk 24
-        targetSdk 34
+        targetSdk 35
         versionCode 2
         versionName "2.0"
 
@@ -34,14 +39,27 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    kapt {
+        correctErrorTypes = true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.9.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation 'androidx.core:core-ktx:1.15.0'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.8.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.8.5'
+
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
+    //Room. To use Kotlin Symbol Processing (KSP)
+    kapt 'androidx.room:room-compiler:2.6.1'
+
+    //Dagger 2 kapt
+    kapt 'com.google.dagger:dagger-compiler:2.50'
 }
